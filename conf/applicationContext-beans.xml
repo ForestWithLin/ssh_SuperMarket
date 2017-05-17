@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <!-- 配置bean -->
+       <!-- dao-bean -->
+       <bean id="baseDao" class="com.supermarket.dao.impl.BaseDaoImpl">
+           <property name="sessionFactory" ref="sessionFactory"></property>
+       </bean>
+       
+       
+       <!-- service-bean -->
+       <bean id="userService" class="com.supermarket.service.impl.UserServiceImpl">
+          <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       <bean id="newsService" class="com.supermarket.service.impl.NewsServiceImpl">
+           <property name="basDao" ref="baseDao"></property>
+       </bean>
+       <bean id="commentService" class="com.supermarket.service.impl.CommentServiceImpl">
+           <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       <bean id="noticeService" class="com.supermarket.service.impl.NoticeServiceImpl">
+           <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       <bean id="productService" class="com.supermarket.service.impl.ProductServiceImpl">
+             <property name="baseDao" ref="baseDao"></property>
+       </bean>       
+       <bean id="productTypeService" class="com.supermarket.service.impl.ProductTypeServiceImpl">
+             <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       <bean id="orderService" class="com.supermarket.service.impl.OrderServiceImpl">
+             <property name="baseDao" ref="baseDao"></property>
+       </bean>
+        <bean id="orderProductServiceImpl" class="com.supermarket.service.impl.OrderProductServiceImpl">
+             <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       <bean id="productSmallTypeServiceImpl" class="com.supermarket.service.impl.ProductSmallTypeServiceImpl">
+             <property name="baseDao" ref="baseDao"></property>
+       </bean>
+       
+       <!-- action-bean -->
+       <bean id="userAction" class="com.supermarket.action.UserAction" scope="prototype">
+           <property name="userServiceImpl" ref="userService"></property>
+       </bean>
+       <bean id="newsAction" class="com.supermarket.action.NewsAction" scope="prototype">
+           <property name="newsServiceImpl" ref="newsService"></property>
+       </bean>
+       <bean id="commentAction" class="com.supermarket.action.CommentAction" scope="prototype">
+            <property name="commentServiceImpl" ref="commentService"></property>
+       </bean>
+       <bean id="noticeAction" class="com.supermarket.action.NoticeAction" scope="prototype">
+            <property name="noticeService" ref="noticeService"></property>
+       </bean>
+       <bean id="productAction" class="com.supermarket.action.ProductAction" scope="prototype">
+            <property name="productService" ref="productService"></property>
+            <property name="productTypeServiceImpl" ref="productTypeService"></property>
+            <property name="smallTypeServiceImpl" ref="productSmallTypeServiceImpl"></property>
+       </bean>
+       <bean id="productTypeAction" class="com.supermarket.action.ProductTypeAction" scope="prototype">
+            <property name="proTypeService" ref="productTypeService"></property>
+       </bean>
+       <bean id="productSmallTypeAction" class="com.supermarket.action.ProductSmallTypeAction" scope="prototype">
+            <property name="proSmallTypeService" ref="productSmallTypeServiceImpl"></property>
+            <property name="productTypeServiceImpl" ref="productTypeService"></property>
+       </bean>
+      
+       <bean id="orderAction" class="com.supermarket.action.OrderAction" scope="prototype">
+            <property name="orderServiceImpl" ref="orderService"></property>
+            <property name="orderProductServiceImpl" ref="orderProductServiceImpl"></property>
+       </bean>
+</beans>

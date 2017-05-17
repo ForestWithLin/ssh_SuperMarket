@@ -1,0 +1,412 @@
+/*--------------------------init-------------------------*/
+
+*{margin: 0;padding: 0;}
+body,button,input,select,textarea {font: 12px tahoma.arial \5b8b\4f53;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;}
+address,cite,dfn,em,var{font-style: normal;}
+code,kbd,pre,samp{font-family: courier new,courier,monospace;}
+small {font-size: 12px;}
+ul,ol{list-style: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+sup{vertical-align: text-top;}
+sub{vertical-align: text-bottom;}
+legend {color: #000;}
+fieldset,img{border: 0;}
+button,input,select,textarea{font-size: 100%;}
+table{border-collapse: collapse;border-spacing: 0;}
+.clear{clear:both;float:none;height:0;overflow: hidden;}
+html.hide{display: none;}
+
+/*-----------------------header-----------------------------*/
+#header{
+    height: 105px;    
+}
+#header .contWidth{
+	position: relative;
+	height: 105px;
+	width:100%;
+	margin: 0 auto;
+	z-index: 100;
+	background-color: #AAAAAA;
+}
+#header .logo{
+	float: left;
+	margin: 0 0 0 10px;
+	color:#fff;
+	line-height: 80px;
+}
+#header .search{
+	left: 400px;
+	top:20px;
+	position: absolute;
+}
+.txtsearch{
+	color: #DDDDDD;
+}
+.contWidth #skin{
+	position:absolute;
+	right:1px;
+	height: 45px;
+	width: 250px;
+}
+.mainNav{
+	position: absolute;
+	top:68px;
+	left: 0;
+	height: 37px;
+	line-height: 37px;
+	width: 100%;
+	z-index: 100;
+	background-color: #4A4A4A
+}
+.mainNav .nav{
+	display: inline;
+	float: left;
+	margin-left: 25px;
+}
+.mainNav ul li{
+	float: left;
+	display: inline;
+	margin-right: 14px;
+	position: relative;
+	z-index: 100;
+}
+.mainNav ul li a{
+	display: block;
+	padding: 0 8px;
+	font-weight: 700;
+	color: #fff;
+	font-size: 14px;
+}
+
+/*-------------------------content----------------------------*/
+#content{
+	clear: left;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+}
+.shopBar{
+	height: 560px;
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+/*--------------------------left-------------------------------*/
+#jnDatalog{
+	position:absolute;
+	left:1px;
+	height: 560px;
+	margin: 0 11px 0 0;
+	overflow: hidden;
+	width: 187px;
+}
+#jnDatalog h2{
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 12px;
+	text-indent: 13px;
+	background-color: #6E6E6E;
+}
+.jnDatainfo{
+	border: 1px solid #6E6E6E;
+	border-style: none solid solid;
+	border-width: 0 1px 1px;
+	height: 524px;
+	overflow: hidden;
+	padding: 5px 10px 0;
+	width: 165px;
+}
+.jnDatainfo h3{
+	border-bottom: 1px solid #EEEEEE;
+	height: 24px;
+	line-height: 24px;
+	width: 164px;
+}
+.jnDatainfo ul{
+	float: left;
+	padding: 0 2px 8px;
+}
+.jnDatainfo li{
+	color: #AEADAE;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	width: 79px;
+	overflow: hidden;
+	position: relative;
+}
+.jnDatainfo li a{
+	color: #444444;
+}
+.jnDatainfo li a:hover{
+	color: #008CD7;
+	text-decoration: none;
+}
+	
+/*------------------------center---------------------------------*/
+#jnIamg{
+	left: 200px;
+	height: 320px;
+	margin: 0 11px 0 0;
+	overflow: hidden;
+	position: absolute;
+	width: 900px;
+}
+#jnIamg img{
+	position: absolute;
+	left: 0;
+	top:0;
+}
+#jnIamg div{
+	bottom: 0;
+	overflow: hidden;
+	position: absolute;
+	float: left;
+}
+#jnIamg div a{
+	background-color: #444444;
+	opacity:0.7; 
+	color: #FFFFFF;
+	display: inline-block;
+	float: left;
+	height: 32px;
+	margin-right: 1px;
+	overflow: hidden;
+	padding: 5px 15px;
+	text-align: center;
+	width: 79px;
+}
+#jnIamg div a:hover{
+	text-decoration: none;
+	background-color: #888888;
+}
+#jnIamg div a em{
+	cursor: pointer;
+	display: block;
+	height: 16px;
+	overflow: hidden;
+	width: 79px;
+}
+#jnIamg .last{
+	margin: 0;
+	width: 80px;
+}
+/*----------------------right---------------------------*/
+#jnNotice{
+	height: 321px;
+	overflow: hidden;
+	position:relative;
+	left:1120px;
+	width: 230px;
+}
+#news{
+	float: left;
+	border: 1px solid #DFDFDF;
+	overflow: hidden;
+	width: 230px;
+	height: 155px;
+}
+#notices{
+	float: left;
+	border: 1px solid #DFDFDF;
+	overflow: hidden;
+	position:absolute;
+	margin-top:7px;
+	width: 230px;
+	height: 153px
+}
+.jnNoInfo h2{
+	height: 23px;
+	line-height: 23px;
+	border-bottom: 1px solid #DFDFDF;
+	text-indent: 12px;
+	background-color:  #6E6E6E;
+}
+.jnNoInfo h2 a{
+	float: right;
+}
+.jnNoInfo ul{
+	padding: 6px 2px 0 12px;
+}
+.jnNoInfo li{
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+.jnNoInfo li a{
+	color: #666666;
+}
+.jnNoInfo li a:hover{
+	color: #008CD7;
+	text-decoration: none;
+}
+
+
+/*-----------------------TAB-------------------------------*/
+#jnBrand{
+	position:absolute;
+	left:200px;
+	bottom:10px;
+	height: 230px;
+	margin: 10px 0 0;
+	overflow: hidden;
+	width: 1000px;
+}
+#jnBrandTab{
+	border-bottom: 1px solid #E4E4E4;
+	height: 29px;
+	position: relative;
+	width: 980px;
+	float: left;
+}
+#jnBrandTab h2{
+	height: 29px;
+	line-height: 29px;
+	left: 0;
+	position: absolute;
+	width: 100px;
+}
+#jnBrandTab ul{
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+#jnBrandTab li{
+	float: left;
+	margin: 0 10px 0 0;
+}
+#jnBrandTab li a{
+	background-color: #E4E4E4;
+	color: #000000;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+}
+#jnBrandTab .chos a{
+	background-color:#666666;
+	color: #FFFFFF;
+	outline: 0 none;
+}
+#jnBrandContent{
+	float: left;
+	height: 188px;
+	overflow: hidden;
+	margin: 8px 5px;
+	width: 980px;
+	position: relative;
+}
+#jnBrandList{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3200px;
+}
+#jnBrandContent li{
+	float: left;
+	height: 188px;
+	overflow: hidden;
+	padding: 0 5px;
+	position: relative;
+	width: 185px;
+}
+#jnBrandContent li img{
+	left: 5px;
+	position: absolute;
+	top: 0;
+}
+#jnBrandContent li span{
+	background-color: #EFEFEF;
+	bottom: 0;
+	color: #666666;
+	display: block;
+	font-size: 14px;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	width: 183px;
+}
+#jnBrandContent li a{
+	color: #666666;
+}
+#jnBrandContent li a:hover{
+	color: #008CD7;
+	text-decoration: none;
+}
+
+/*------------------------details----------------------------*/
+#jnProitem{
+	left: 200px;
+	height: 560px;
+	margin: 0 11px 0 0;
+	overflow: hidden;
+	position: absolute;
+	width: 550px;
+}
+#jnDetails{
+	left:760px;
+	height: 560px;
+	margin: 0 11px 0 0;
+	overflow: hidden;
+	position: absolute;
+	width: 550px;
+}
+#jnDetails h3{
+	display:inline;
+}
+#jnDetails p{
+	display:inline;
+}
+#jnProitem .jnProImg{
+	border: 1px solid #6E6E6E;
+	height: 400px;
+	overflow: hidden;
+	width: 548px;
+}
+#jnProShow ul{
+	position: absolute;
+	left: 0;
+	bottom: 115px;
+}
+#jnProShow li{
+	float: left;
+	margin: 0 10px 0 0;
+}
+#jnProShow li a{
+	background-color: #E4E4E4;
+	color: #000000;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+}
+#jnProShow li a:hover{
+	background-color: #666666;
+	text-decoration: none;
+}
+#jntxt{
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	width:450px;
+	height:100px;
+	border:1px solid #666666;
+	font-weight:blod;
+}
+.btn{
+	 border:medium none;  
+     background:#666666;  
+     position:absolute;
+     left:0;
+     height:35px;  
+     color:#fff;  
+     font-size:16px;  
+     cursor:pointer;  
+     font-weight:bold;  
+     width: 220px; 
+}

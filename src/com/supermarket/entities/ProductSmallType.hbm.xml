@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-1-17 17:45:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.supermarket.entities.ProductSmallType" table="SSH_PRODUCT_SMALLTYPE">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <set name="products" table="PRODUCT" inverse="true" lazy="true" cascade="none">
+            <key>
+                <column name="PRODUCT_SMALL_TYPE" />
+            </key>
+            <one-to-many class="com.supermarket.entities.Product" />
+        </set>
+        <many-to-one name="productType" class="com.supermarket.entities.ProductType" fetch="join"  lazy="false">
+            <column name="PRO_BITYPE" />
+        </many-to-one>
+        <property name="proName" type="java.lang.String">
+            <column name="PRO_NAME" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="REMARKS" />
+        </property>
+    </class>
+</hibernate-mapping>

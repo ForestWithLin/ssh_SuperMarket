@@ -1,0 +1,8 @@
+/applicationContext-beans.xml
+/applicationContext.xml
+/com/
+/db.properties
+/hibernate.cfg.xml
+/i18n.properties
+/struts.xml
+/xwork-conversion.properties

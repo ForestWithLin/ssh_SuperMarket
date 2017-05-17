@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">  
+      
+<struts>  
+	<!-- 配置国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+    <constant name="struts.i18n.encoding" value="UTF-8" />  
+    <!-- 设定action后缀名为action -->
+    <constant name="struts.action.extension" value="action" />  
+    
+	<package name="ssh_supermarket" namespace="/" extends="struts-default">  
+	
+    <!-- 定义新的拦截器栈, 配置 prepare 拦截器栈的 alwaysInvokePrepare 参数值为 false -->
+		<interceptors>
+			<interceptor-stack name="sshStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+	  <!-- 修改文件上传参数 -->
+                   <interceptor-ref name="defaultStack">
+                     <param name="fileUpload.maximumSize">2000000</param>
+                     <param name="fileUpload.allowedTypes">image/bmp,image/png,image/gif,image/jpg,image/jpeg</param>
+                     <param name="fileUpload.allowedExtensions">jpg,png,gif</param>
+                   </interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+	<!-- 使用新的拦截器栈 -->
+	
+	<default-interceptor-ref name="sshStack"></default-interceptor-ref>
+	
+	     <action name="user_*" class="userAction" method="{1}">
+	       <result name="user_root">/admin/main.jsp</result>
+	       <result name="user_all_query">/admin/userManage.jsp</result>
+	       <result name="user_delete_save" type="redirectAction">user_all.action</result>
+	       <result name="user_edit">edit/user_edit.jsp</result>
+	       <result name="success">/customer/customer.jsp</result>
+	       <result name="user_logout">login.jsp</result>
+	     </action>
+	     
+	     <action name="news_*" class="newsAction" method="{1}">
+	         <result name="news_all_query">/admin/news.jsp</result>
+	         <result name="news_delete_save" type="redirectAction">news_all.action</result>
+	         <result name="news_edit">edit/news_edit.jsp</result>
+	         <result name="news_list">login.jsp</result>
+	     </action>
+	     
+	     <action name="comt_*" class="commentAction" method="{1}">
+	         <result name="comt_all_query">/admin/comment.jsp</result>
+	         <result name="comt_delete" type="redirectAction">comt_all.action</result>
+	         <result name="comt_list">login.jsp</result>
+	     </action>
+	     
+	     <action name="not_*" class="noticeAction" method="{1}">
+	         <result name="not_all_query">/admin/notice.jsp</result>
+	         <result name="not_delete_save" type="redirectAction">not_all.action</result>
+	         <result name="not_edit">edit/notice_edit.jsp</result>
+	         <result name="not_list">login.jsp</result>
+	     </action>
+	     
+	     <action name="prod_*" class="productAction" method="{1}">
+	         <result name="prod_all_query">/admin/product.jsp</result>
+	         <result name="prod_delete_save" type="redirectAction">prod_all.action</result>
+	         <result name="prod_input" type="redirect">edit/prod_edit.jsp</result>
+	         <result name="prod_list_edit">edit/prod_edit.jsp</result>
+	         <result name="prod_show">log_show.jsp</result>
+	         <result name="success">login.jsp</result>
+	         <result name="input">prod_edit.jsp</result>
+	     </action>
+	     
+	     <action name="prot_*" class="productTypeAction" method="{1}">
+	         <result name="prot_all_query">/admin/proType.jsp</result>
+	         <result name="prot_delete_save" type="redirectAction">prot_all.action</result>
+	         <result name="prot_edit">edit/prot_edit.jsp</result>
+	     </action>
+	     
+	     <action name="promt_*" class="productSmallTypeAction" method="{1}">
+	         <result name="promt_all_query">/admin/proSmallType.jsp</result>
+	         <result name="promt_delete_save" type="redirectAction">promt_all.action</result>
+	         <result name="promt_input" type="redirect">edit/promt_edit.jsp</result>
+	         <result name="promt_list_edit">edit/promt_edit.jsp</result>
+	         <result name="promt_edit">edit/promt_edit.jsp</result>
+	     </action>
+	     
+	     <action name="or_*" class="orderAction" method="{1}">
+	         <result name="or_all_query">/admin/order.jsp</result>
+	         <result name="success">/customer/customer.jsp</result>
+	         <result name="input">success.jsp</result>
+	     </action>
+    </package>  
+</struts>   

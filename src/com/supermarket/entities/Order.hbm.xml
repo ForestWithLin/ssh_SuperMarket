@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-1-17 17:45:22 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.supermarket.entities.Order" table="SSH_ORDER">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="orderNum" type="java.lang.String">
+            <column name="ORDERNUM" />
+        </property>
+        <property name="orderTime" type="java.util.Date">
+            <column name="ORDERTIME" />
+        </property>
+        <property name="orderCost" type="java.lang.Float">
+            <column name="ORDERCOST" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <many-to-one name="userId" class="com.supermarket.entities.User" fetch="join" lazy="false" cascade="save-update,persist">
+            <column name="USER_ID" />
+        </many-to-one>
+        <set name="orderProducts" table="SSH_ORDER_PRODUCT" inverse="true" lazy="false" cascade="delete">
+            <key>
+                <column name="ORID" />
+            </key>
+            <one-to-many class="com.supermarket.entities.OrderProduct" />
+        </set>
+    </class>
+</hibernate-mapping>
